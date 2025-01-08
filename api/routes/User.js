@@ -2,6 +2,8 @@ const express = require("express");
 const userRoute = express.Router();
 const asyncHandler = require("express-async-handler");
 const User = require("../models/User");
+const generateToken = require("../generateToken")
+const protect = require("../middleware/Auth")
 
 userRoute.post('/login', asyncHandler(
     async (req, res) => {
@@ -17,7 +19,7 @@ userRoute.post('/login', asyncHandler(
                 name: user.name,
                 email: user.email,
                 isAdmin: user.isAdmin,
-                token: null,
+                token: generateToken(user._id),
                 createdAt: user.createdAt
             })
         } else {
@@ -52,6 +54,25 @@ userRoute.post("/", asyncHandler(
                 res.status(400)
                 throw new Error("Invalid user data")
             }
+        }
+    }
+))
+
+// user profile
+userRoute.get("/profile", protect, asyncHandler (
+    async (req, res) => {
+        const user = await User.findById( req.user._id );
+        if (user) {
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                isAdmin: user.isAdmin,
+                createdAt: user.createdAt
+            });
+        } else {
+            res.Error(404)
+            throw new Error("User not found")
         }
     }
 ))
