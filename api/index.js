@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const products = require("./data/products");
-dotenv.config()
+dotenv.config();
 
 // uses the port defined in the .env file
 const PORT = process.env.PORT;
