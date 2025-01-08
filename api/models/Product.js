@@ -6,7 +6,7 @@ const reviewSchema = mongoose.Schema(
         rating: { type: Number, required: true },
         comment: { type: String, required: true },
         // objectId is automatically created
-        user: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User"}
+        user: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" }
     }
 )
 const productSchema = mongoose.Schema(
