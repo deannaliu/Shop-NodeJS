@@ -20,3 +20,5 @@ http://localhost:9000/api/products
 
 db username: deannaliu
 db password: shoob-db-password
+
+postman api 

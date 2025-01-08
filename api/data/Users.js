@@ -1,4 +1,4 @@
-const bcrypt = required("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const users = [
     {
