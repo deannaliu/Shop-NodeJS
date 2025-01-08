@@ -15,3 +15,8 @@ nodemon: node js
 npm run server
 
 http://localhost:9000/
+
+http://localhost:9000/api/products
+
+db username: deannaliu
+db password: shoob-db-password
