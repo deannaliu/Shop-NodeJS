@@ -30,6 +30,14 @@ const databaseSeeder = require("./databaseSeeder")
 // database seeder routes
 app.use("/api/seed", databaseSeeder)
 
+// route for users
+// api/users/login
+const userRoute = require("./routes/User")
+
+// this is to allow json format for express
+app.use(express.json()) 
+app.use("/api/users", userRoute)
+
 app.listen(PORT, function(err){
     if (err) 
         console.log("Error in server setup")
