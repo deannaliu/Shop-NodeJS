@@ -41,6 +41,9 @@ app.use("/api/users", userRoute);
 const productRoute = require("./routes/Product")
 app.use("/api/products", productRoute);
 
+const orderRoute = require("./routes/Order")
+app.use("/api/orders", orderRoute);
+
 app.listen(PORT, function(err){
     if (err) 
         console.log("Error in server setup")
