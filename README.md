@@ -22,3 +22,16 @@ db username: deannaliu
 db password: shoob-db-password
 
 postman api 
+
+tailwindcss with flowbite
+
+npm run dev
+local:  http://localhost:5173/
+
+https://flowbite.com/docs/getting-started/quickstart/
+
+in client: npm install -D tailwindcss postcss autoprefixer
+npm install flowbite flowbite-react
+npx tailwindcss init -p
+
+https://tailblocks.cc/
